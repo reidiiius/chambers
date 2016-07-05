@@ -89,26 +89,24 @@ camerae () {
  k2j56y7="NpCu ____ ____ FePu HgHg PuFe SnTi ____ CuNp PbAu ____ ____ "
 
 siphuncle () {
-  if [[ -n $qp ]]; then
-    echo "${qp:25:25}"
-    echo "${qp:0 :25}"
-    echo "${qp:35:25}"
-    echo "${qp:10:25}"
-    echo "${qp:45:15}${qp:0 :10}"
-    echo "${qp:20:25}"
-    echo "${qp:55:5 }${qp:0 :20}"
+  if [[ -n $1 ]]; then
+    echo "${1:25:25}"
+    echo "${1:0 :25}"
+    echo "${1:35:25}"
+    echo "${1:10:25}"
+    echo "${1:45:15}${1:0 :10}"
+    echo "${1:20:25}"
+    echo "${1:55:5 }${1:0 :20}"
   else
     return
   fi
 }
 
-qp=$j5
   echo -e "\nj5"
-  siphuncle qp
+  siphuncle "$j5"
 
-qp=$k6
   echo -e "\nk6"
-  siphuncle qp
+  siphuncle "$k6"
 
   echo
 }
