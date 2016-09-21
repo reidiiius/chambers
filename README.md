@@ -1,10 +1,20 @@
 # Chambers
-Shell scripts
+Conchology
+
+---
+
+### Download
+
+    https://github.com/reidiiius/chambers.git
+
+---
 
 ### Usage
-From the command line:
+command line
 
-    bash strombus.sh
+    cd chambers && bash strombus.sh
+
+---
 
 ### Distribution
 MIT License
