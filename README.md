@@ -5,7 +5,7 @@ Conchology
 
 ### Download
 
-    https://github.com/reidiiius/chambers.git
+    git clone https://github.com/reidiiius/chambers.git
 
 ---
 
