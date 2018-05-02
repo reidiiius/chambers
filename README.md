@@ -12,7 +12,11 @@ Conchology
 ### Usage
 command line
 
-    cd chambers && bash strombus.sh
+    cd chambers
+
+    bash strombus.sh
+
+    sh phragmocone.sh
 
 ---
 

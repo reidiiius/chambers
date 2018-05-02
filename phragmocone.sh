@@ -1,115 +1,173 @@
-#!/bin/bash
+#!/bin/sh
 
 # phragmocone
 
 camerae () {
 
-      j2="HgHg PuFe ____ ____ CuNp PbAu ____ AuPb ____ AgUr ____ FePu "
-      j3="HgSn ____ SnHg UrFe ____ PbAg ____ AuAu ____ AgPb ____ FeUr "
-      j5="PbCu ____ AuSn ____ AgHg TiFe FeTi ____ ____ SnAu ____ CuPb "
-      j6="HgAu ____ SnPb ____ CuUr PbSn ____ AuHg NpFe ____ ____ FeNp "
-      k1="____ FeUr HgSn ____ SnHg UrFe ____ PbAg ____ AuAu ____ AgPb "
-      k2="NpCu ____ ____ FePu HgHg PuFe ____ UrAg ____ PbAu ____ AuPb "
-      k5="UrCu ____ PbSn ____ AuHg NpFe ____ ____ FeNp HgAu ____ SnPb "
-      k6="HgAg ____ SnAu ____ CuPb PbCu ____ AuSn ____ ____ TiFe FeTi "
-      n0="HgCu ____ SnSn ____ CuHg PbFe ____ AuAg ____ AgAu ____ FePb "
-     j17="____ ____ SnAu ____ CuPb PbCu ____ AuSn ____ AgHg TiFe FeTi "
-     j23="HgHg PuFe ____ UrAg ____ PbAu ____ AuPb ____ AgUr ____ FePu "
-     j25="FeCu HgMn ____ ____ MnHg CuFe PbTi ____ ____ NpAu ____ TiPb "
-     j26="HgHg PuFe ____ ____ CuNp PbAu ____ AuPb NpCu ____ ____ FePu "
-     j36="HgAu ____ SnPb UrCu ____ PbSn ____ AuHg NpFe ____ ____ FeNp "
-     j56="UrCu ____ PbSn ____ AuHg NpFe AgTi ____ FeNp ____ ____ SnPb "
-     k12="____ AgUr ____ FePu HgHg PuFe ____ UrAg ____ PbAu ____ AuPb "
-     k15="____ CuUr PbSn ____ AuHg NpFe ____ ____ FeNp HgAu ____ SnPb "
-     k25="NpCu ____ ____ FePu HgHg PuFe ____ ____ CuNp PbAu ____ AuPb "
-     k26="HgMn ____ ____ MnHg CuFe PbTi ____ AuNp ____ ____ TiPb FeCu "
-     k34="PbCu ____ AuSn ____ ____ TiFe FeTi HgAg ____ SnAu ____ CuPb "
-     k56="HgAu ____ SnPb ____ CuUr PbSn ____ ____ NpFe ____ TiAg FeNp "
-    j236="HgHg PuFe ____ UrAg ____ PbAu ____ AuPb NpCu ____ ____ FePu "
-    j256="FeCu HgMn ____ ____ MnHg CuFe PbTi ____ AuNp ____ ____ TiPb "
-    j2k5="FeCu HgMn ____ ____ MnHg CuFe ____ ____ AuNp NpAu ____ TiPb "
-    j2k6="HgHg PuFe ____ ____ CuNp PbAu ____ AuPb ____ ____ TiSn FePu "
-    j2y3="HgHg PuFe SnTi ____ ____ PbAu ____ AuPb ____ AgUr ____ FePu "
-    j3k5="NpCu ____ TiSn FePu ____ PuFe ____ ____ CuNp PbAu ____ AuPb "
-    j3k6="HgTi ____ SnNp UrAu ____ PbPb ____ AuUr ____ ____ TiHg FeFe "
-    j5y6="PbCu ____ AuSn ____ AgHg TiFe FeTi HgAg ____ ____ ____ CuPb "
-    k125="____ AgUr ____ FePu HgHg PuFe ____ ____ CuNp PbAu ____ AuPb "
-    k1j5="____ AuUr NpSn ____ TiHg FeFe HgTi ____ ____ UrAu ____ PbPb "
-    k1j6="____ PuFe SnTi ____ CuNp PbAu ____ AuPb NpCu ____ ____ FePu "
-    k256="HgMn ____ ____ MnHg CuFe PbTi ____ ____ NpAu ____ TiPb FeCu "
-    k2j5="NpCu ____ ____ FePu HgHg PuFe SnTi ____ ____ PbAu ____ AuPb "
-    k2j6="HgMn ____ ____ MnHg CuFe PbTi ____ AuNp NpAu ____ ____ FeCu "
-    k2x1="____ ____ TiSn FePu HgHg PuFe ____ UrAg ____ PbAu ____ AuPb "
-    k6x5="HgAg ____ SnAu ____ CuPb PbCu ____ ____ ____ AgHg TiFe FeTi "
-    n167="NpCu ____ ____ FePu ____ PuFe SnTi ____ CuNp PbAu ____ AuPb "
-    n345="____ PuFe ____ ____ CuNp PbAu ____ AuPb NpCu ____ TiSn FePu "
-    n5y2="HgMn ____ ____ MnHg CuFe ____ ____ AuNp NpAu ____ TiPb FeCu "
-    n6x2="FeCu HgMn ____ ____ MnHg CuFe PbTi ____ AuNp NpAu ____ ____ "
-   j17k2="____ ____ ____ MnFe CuTi PbAg ____ AuAu ____ AgPb TiCu FeMn "
-   j17y2="HgAg ____ ____ ____ CuPb PbCu ____ AuSn ____ AgHg TiFe FeTi "
-   j23k6="HgHg PuFe ____ UrAg ____ PbAu ____ AuPb ____ ____ TiSn FePu "
-   j25y6="TiCu FeMn ____ ____ SnHg MnFe CuTi PbAg ____ ____ ____ AgPb "
-   j26y3="HgHg PuFe SnTi ____ ____ PbAu ____ AuPb NpCu ____ ____ FePu "
-   j2k34="TiCu FeMn ____ ____ ____ MnFe CuTi PbAg ____ AuAu ____ AgPb "
-   j2k56="HgHg PuFe ____ ____ CuNp PbAu ____ ____ NpCu ____ TiSn FePu "
-   j34k6="HgSn ____ SnHg MnFe CuTi ____ ____ AuAu ____ ____ TiCu FeMn "
-   j56y7="UrCu ____ PbSn ____ AuHg NpFe AgTi ____ FeNp HgAu ____ ____ "
-   k12j5="____ AgUr ____ FePu HgHg PuFe SnTi ____ ____ PbAu ____ AuPb "
-   k17j5="TiCu FeMn HgSn ____ SnHg MnFe CuTi ____ ____ AuAu ____ ____ "
-   k25x1="____ ____ TiSn FePu HgHg PuFe ____ ____ CuNp PbAu ____ AuPb "
-   k26x5="HgSn ____ ____ MnFe CuTi PbAg ____ ____ ____ AgPb TiCu FeMn "
-   k2j56="NpCu ____ ____ FePu HgHg PuFe SnTi ____ CuNp ____ ____ AuPb "
-   k34x2="PbCu ____ ____ ____ AgHg TiFe FeTi HgAg ____ SnAu ____ CuPb "
-   k56x4="HgAu ____ SnPb ____ CuUr ____ ____ AuHg NpFe ____ TiAg FeNp "
-   n25x6="TiCu FeMn HgSn ____ ____ MnFe CuTi PbAg ____ ____ ____ AgPb "
-   n26y5="____ ____ SnHg MnFe CuTi PbAg ____ ____ ____ AgPb TiCu FeMn "
-   n45y2="HgTi ____ ____ UrAu ____ PbPb ____ AuUr NpSn ____ TiHg FeFe "
-   n67x2="____ AuUr ____ ____ TiHg FeFe HgTi ____ SnNp UrAu ____ PbPb "
-  j136y7="____ ____ SnPb UrCu ____ PbSn ____ AuHg NpFe AgTi ____ FeNp "
-  j167y2="HgAu ____ ____ ____ CuUr PbSn ____ AuHg NpFe ____ TiAg FeNp "
-  j246y3="HgHg PuFe SnTi ____ CuNp ____ ____ AuPb NpCu ____ ____ FePu "
-  j26y34="HgHg PuFe SnTi UrAg ____ ____ ____ AuPb NpCu ____ ____ FePu "
-  j2k6x5="HgHg PuFe ____ ____ CuNp PbAu ____ ____ ____ AgUr TiSn FePu "
-  j2k6y3="HgHg PuFe SnTi ____ ____ PbAu ____ AuPb ____ ____ TiSn FePu "
-  j346y5="NpCu ____ TiSn FePu HgHg PuFe ____ ____ CuNp ____ ____ AuPb "
-  j3k5x4="HgAu ____ SnPb UrCu ____ ____ ____ AuHg NpFe AgTi ____ FeNp "
-  k135x4="____ CuUr PbSn ____ ____ NpFe ____ TiAg FeNp HgAu ____ SnPb "
-  k157x6="HgHg PuFe SnTi ____ CuNp PbAu ____ ____ NpCu ____ ____ FePu "
-  k1j6y7="____ CuUr PbSn ____ AuHg NpFe ____ TiAg FeNp HgAu ____ ____ "
-  k257x1="NpCu ____ TiSn FePu HgHg PuFe ____ ____ CuNp PbAu ____ ____ "
-  k25x17="____ AgUr TiSn FePu HgHg PuFe ____ ____ CuNp PbAu ____ ____ "
-  k2j5x1="____ ____ TiSn FePu HgHg PuFe SnTi ____ ____ PbAu ____ AuPb "
-  k2j5y6="NpCu ____ ____ FePu HgHg PuFe SnTi UrAg ____ ____ ____ AuPb "
-  k345x2="UrCu ____ ____ ____ AuHg NpFe AgTi ____ FeNp HgAu ____ SnPb "
-  n167x4="HgAu ____ ____ UrCu ____ PbSn ____ AuHg NpFe AgTi ____ FeNp "
-  n345y7="____ CuUr ____ ____ AuHg NpFe ____ TiAg FeNp HgAu ____ SnPb "
- j2k56x4="HgHg PuFe ____ ____ CuNp ____ ____ AuPb NpCu ____ TiSn FePu "
- j3k56x4="HgTi ____ SnNp UrAu ____ ____ ____ AuUr NpSn ____ TiHg FeFe "
- k1j56y7="____ AuUr NpSn ____ TiHg FeFe HgTi ____ SnNp UrAu ____ ____ "
- k2j56y7="NpCu ____ ____ FePu HgHg PuFe SnTi ____ CuNp PbAu ____ ____ "
+  local l=__ o=Ti p=Mn q=Fe r=Cu s=Ag t=Sn u=Au v=Hg w=Pb x=Ur y=Np z=Pu
+
+     local j2="$v$v $z$q $l$l $l$l $r$y $w$u $l$l $u$w $l$l $s$x $l$l $q$z "
+     local j3="$v$t $l$l $t$v $x$q $l$l $w$s $l$l $u$u $l$l $s$w $l$l $q$x "
+     local j5="$w$r $l$l $u$t $l$l $s$v $o$q $q$o $l$l $l$l $t$u $l$l $r$w "
+     local j6="$v$u $l$l $t$w $l$l $r$x $w$t $l$l $u$v $y$q $l$l $l$l $q$y "
+     local k1="$l$l $q$x $v$t $l$l $t$v $x$q $l$l $w$s $l$l $u$u $l$l $s$w "
+     local k2="$y$r $l$l $l$l $q$z $v$v $z$q $l$l $x$s $l$l $w$u $l$l $u$w "
+     local k5="$x$r $l$l $w$t $l$l $u$v $y$q $l$l $l$l $q$y $v$u $l$l $t$w "
+     local k6="$v$s $l$l $t$u $l$l $r$w $w$r $l$l $u$t $l$l $l$l $o$q $q$o "
+     local n0="$v$r $l$l $t$t $l$l $r$v $w$q $l$l $u$s $l$l $s$u $l$l $q$w "
+    local j17="$l$l $l$l $t$u $l$l $r$w $w$r $l$l $u$t $l$l $s$v $o$q $q$o "
+    local j23="$v$v $z$q $l$l $x$s $l$l $w$u $l$l $u$w $l$l $s$x $l$l $q$z "
+    local j25="$q$r $v$p $l$l $l$l $p$v $r$q $w$o $l$l $l$l $y$u $l$l $o$w "
+    local j26="$v$v $z$q $l$l $l$l $r$y $w$u $l$l $u$w $y$r $l$l $l$l $q$z "
+    local j36="$v$u $l$l $t$w $x$r $l$l $w$t $l$l $u$v $y$q $l$l $l$l $q$y "
+    local j56="$x$r $l$l $w$t $l$l $u$v $y$q $s$o $l$l $q$y $l$l $l$l $t$w "
+    local k12="$l$l $s$x $l$l $q$z $v$v $z$q $l$l $x$s $l$l $w$u $l$l $u$w "
+    local k15="$l$l $r$x $w$t $l$l $u$v $y$q $l$l $l$l $q$y $v$u $l$l $t$w "
+    local k25="$y$r $l$l $l$l $q$z $v$v $z$q $l$l $l$l $r$y $w$u $l$l $u$w "
+    local k26="$v$p $l$l $l$l $p$v $r$q $w$o $l$l $u$y $l$l $l$l $o$w $q$r "
+    local k34="$w$r $l$l $u$t $l$l $l$l $o$q $q$o $v$s $l$l $t$u $l$l $r$w "
+    local k56="$v$u $l$l $t$w $l$l $r$x $w$t $l$l $l$l $y$q $l$l $o$s $q$y "
+   local j236="$v$v $z$q $l$l $x$s $l$l $w$u $l$l $u$w $y$r $l$l $l$l $q$z "
+   local j256="$q$r $v$p $l$l $l$l $p$v $r$q $w$o $l$l $u$y $l$l $l$l $o$w "
+   local j2k5="$q$r $v$p $l$l $l$l $p$v $r$q $l$l $l$l $u$y $y$u $l$l $o$w "
+   local j2k6="$v$v $z$q $l$l $l$l $r$y $w$u $l$l $u$w $l$l $l$l $o$t $q$z "
+   local j2y3="$v$v $z$q $t$o $l$l $l$l $w$u $l$l $u$w $l$l $s$x $l$l $q$z "
+   local j3k5="$y$r $l$l $o$t $q$z $l$l $z$q $l$l $l$l $r$y $w$u $l$l $u$w "
+   local j3k6="$v$o $l$l $t$y $x$u $l$l $w$w $l$l $u$x $l$l $l$l $o$v $q$q "
+   local j5y6="$w$r $l$l $u$t $l$l $s$v $o$q $q$o $v$s $l$l $l$l $l$l $r$w "
+   local k125="$l$l $s$x $l$l $q$z $v$v $z$q $l$l $l$l $r$y $w$u $l$l $u$w "
+   local k1j5="$l$l $u$x $y$t $l$l $o$v $q$q $v$o $l$l $l$l $x$u $l$l $w$w "
+   local k1j6="$l$l $z$q $t$o $l$l $r$y $w$u $l$l $u$w $y$r $l$l $l$l $q$z "
+   local k256="$v$p $l$l $l$l $p$v $r$q $w$o $l$l $l$l $y$u $l$l $o$w $q$r "
+   local k2j5="$y$r $l$l $l$l $q$z $v$v $z$q $t$o $l$l $l$l $w$u $l$l $u$w "
+   local k2j6="$v$p $l$l $l$l $p$v $r$q $w$o $l$l $u$y $y$u $l$l $l$l $q$r "
+   local k2x1="$l$l $l$l $o$t $q$z $v$v $z$q $l$l $x$s $l$l $w$u $l$l $u$w "
+   local k6x5="$v$s $l$l $t$u $l$l $r$w $w$r $l$l $l$l $l$l $s$v $o$q $q$o "
+   local n167="$y$r $l$l $l$l $q$z $l$l $z$q $t$o $l$l $r$y $w$u $l$l $u$w "
+   local n345="$l$l $z$q $l$l $l$l $r$y $w$u $l$l $u$w $y$r $l$l $o$t $q$z "
+   local n5y2="$v$p $l$l $l$l $p$v $r$q $l$l $l$l $u$y $y$u $l$l $o$w $q$r "
+   local n6x2="$q$r $v$p $l$l $l$l $p$v $r$q $w$o $l$l $u$y $y$u $l$l $l$l "
+  local j17k2="$l$l $l$l $l$l $p$q $r$o $w$s $l$l $u$u $l$l $s$w $o$r $q$p "
+  local j17y2="$v$s $l$l $l$l $l$l $r$w $w$r $l$l $u$t $l$l $s$v $o$q $q$o "
+  local j23k6="$v$v $z$q $l$l $x$s $l$l $w$u $l$l $u$w $l$l $l$l $o$t $q$z "
+  local j25y6="$o$r $q$p $l$l $l$l $t$v $p$q $r$o $w$s $l$l $l$l $l$l $s$w "
+  local j26y3="$v$v $z$q $t$o $l$l $l$l $w$u $l$l $u$w $y$r $l$l $l$l $q$z "
+  local j2k34="$o$r $q$p $l$l $l$l $l$l $p$q $r$o $w$s $l$l $u$u $l$l $s$w "
+  local j2k56="$v$v $z$q $l$l $l$l $r$y $w$u $l$l $l$l $y$r $l$l $o$t $q$z "
+  local j34k6="$v$t $l$l $t$v $p$q $r$o $l$l $l$l $u$u $l$l $l$l $o$r $q$p "
+  local j56y7="$x$r $l$l $w$t $l$l $u$v $y$q $s$o $l$l $q$y $v$u $l$l $l$l "
+  local k12j5="$l$l $s$x $l$l $q$z $v$v $z$q $t$o $l$l $l$l $w$u $l$l $u$w "
+  local k17j5="$o$r $q$p $v$t $l$l $t$v $p$q $r$o $l$l $l$l $u$u $l$l $l$l "
+  local k25x1="$l$l $l$l $o$t $q$z $v$v $z$q $l$l $l$l $r$y $w$u $l$l $u$w "
+  local k26x5="$v$t $l$l $l$l $p$q $r$o $w$s $l$l $l$l $l$l $s$w $o$r $q$p "
+  local k2j56="$y$r $l$l $l$l $q$z $v$v $z$q $t$o $l$l $r$y $l$l $l$l $u$w "
+  local k34x2="$w$r $l$l $l$l $l$l $s$v $o$q $q$o $v$s $l$l $t$u $l$l $r$w "
+  local k56x4="$v$u $l$l $t$w $l$l $r$x $l$l $l$l $u$v $y$q $l$l $o$s $q$y "
+  local n25x6="$o$r $q$p $v$t $l$l $l$l $p$q $r$o $w$s $l$l $l$l $l$l $s$w "
+  local n26y5="$l$l $l$l $t$v $p$q $r$o $w$s $l$l $l$l $l$l $s$w $o$r $q$p "
+  local n45y2="$v$o $l$l $l$l $x$u $l$l $w$w $l$l $u$x $y$t $l$l $o$v $q$q "
+  local n67x2="$l$l $u$x $l$l $l$l $o$v $q$q $v$o $l$l $t$y $x$u $l$l $w$w "
+ local j136y7="$l$l $l$l $t$w $x$r $l$l $w$t $l$l $u$v $y$q $s$o $l$l $q$y "
+ local j167y2="$v$u $l$l $l$l $l$l $r$x $w$t $l$l $u$v $y$q $l$l $o$s $q$y "
+ local j246y3="$v$v $z$q $t$o $l$l $r$y $l$l $l$l $u$w $y$r $l$l $l$l $q$z "
+ local j26y34="$v$v $z$q $t$o $x$s $l$l $l$l $l$l $u$w $y$r $l$l $l$l $q$z "
+ local j2k6x5="$v$v $z$q $l$l $l$l $r$y $w$u $l$l $l$l $l$l $s$x $o$t $q$z "
+ local j2k6y3="$v$v $z$q $t$o $l$l $l$l $w$u $l$l $u$w $l$l $l$l $o$t $q$z "
+ local j346y5="$y$r $l$l $o$t $q$z $v$v $z$q $l$l $l$l $r$y $l$l $l$l $u$w "
+ local j3k5x4="$v$u $l$l $t$w $x$r $l$l $l$l $l$l $u$v $y$q $s$o $l$l $q$y "
+ local k135x4="$l$l $r$x $w$t $l$l $l$l $y$q $l$l $o$s $q$y $v$u $l$l $t$w "
+ local k157x6="$v$v $z$q $t$o $l$l $r$y $w$u $l$l $l$l $y$r $l$l $l$l $q$z "
+ local k1j6y7="$l$l $r$x $w$t $l$l $u$v $y$q $l$l $o$s $q$y $v$u $l$l $l$l "
+ local k257x1="$y$r $l$l $o$t $q$z $v$v $z$q $l$l $l$l $r$y $w$u $l$l $l$l "
+ local k25x17="$l$l $s$x $o$t $q$z $v$v $z$q $l$l $l$l $r$y $w$u $l$l $l$l "
+ local k2j5x1="$l$l $l$l $o$t $q$z $v$v $z$q $t$o $l$l $l$l $w$u $l$l $u$w "
+ local k2j5y6="$y$r $l$l $l$l $q$z $v$v $z$q $t$o $x$s $l$l $l$l $l$l $u$w "
+ local k345x2="$x$r $l$l $l$l $l$l $u$v $y$q $s$o $l$l $q$y $v$u $l$l $t$w "
+ local n167x4="$v$u $l$l $l$l $x$r $l$l $w$t $l$l $u$v $y$q $s$o $l$l $q$y "
+ local n345y7="$l$l $r$x $l$l $l$l $u$v $y$q $l$l $o$s $q$y $v$u $l$l $t$w "
+local j2k56x4="$v$v $z$q $l$l $l$l $r$y $l$l $l$l $u$w $y$r $l$l $o$t $q$z "
+local j3k56x4="$v$o $l$l $t$y $x$u $l$l $l$l $l$l $u$x $y$t $l$l $o$v $q$q "
+local k1j56y7="$l$l $u$x $y$t $l$l $o$v $q$q $v$o $l$l $t$y $x$u $l$l $l$l "
+local k2j56y7="$y$r $l$l $l$l $q$z $v$v $z$q $t$o $l$l $r$y $w$u $l$l $l$l "
+
+# metadata
+
+local srl="-beadgcf-sv`date +'%s%N'`"
+
+# headstock
+
+pegbox_Bj () {
+  echo $1 | awk '{print "\t"$11,$12,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10}'
+}
+
+pegbox_Fn () {
+  echo $1 | awk '{print "\t"$6,$7,$8,$9,$10,$11,$12,$1,$2,$3,$4,$5}'
+}
+
+pegbox_Cn () {
+  echo $1 | awk '{print "\t"$0}'
+}
+
+pegbox_Gn () {
+  echo $1 | awk '{print "\t"$8,$9,$10,$11,$12,$1,$2,$3,$4,$5,$6,$7}'
+}
+
+pegbox_Dn () {
+  echo $1 | awk '{print "\t"$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$1,$2}'
+}
+
+pegbox_An () {
+  echo $1 | awk '{print "\t"$10,$11,$12,$1,$2,$3,$4,$5,$6,$7,$8,$9}'
+}
+
+pegbox_En () {
+  echo $1 | awk '{print "\t"$5,$6,$7,$8,$9,$10,$11,$12,$1,$2,$3,$4}'
+}
+
+pegbox_Bn () {
+  echo $1 | awk '{print "\t"$12,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11}'
+}
+
+pegbox_Fk () {
+  echo $1 | awk '{print "\t"$7,$8,$9,$10,$11,$12,$1,$2,$3,$4,$5,$6}'
+}
+
+# fingerboard
 
 siphuncle () {
-  if [[ -n $1 ]]; then
-    echo "${1:25:25}"
-    echo "${1:0 :25}"
-    echo "${1:35:25}"
-    echo "${1:10:25}"
-    echo "${1:45:15}${1:0 :10}"
-    echo "${1:20:25}"
-    echo "${1:55:5 }${1:0 :20}"
+  if [ -n "$1" ]
+    then
+    pegbox_Fn "$1"
+    pegbox_Cn "$1"
+    pegbox_Gn "$1"
+    pegbox_Dn "$1"
+    pegbox_An "$1"
+    pegbox_En "$1"
+    pegbox_Bn "$1"
   else
-    return
+    echo "
+	Error: argument length is zero" >&2
   fi
 }
 
-  echo -e "\nj5"
-  siphuncle "$j5"
+# layout
 
-  echo -e "\nk6"
+  echo "
+
+	k6$srl"
   siphuncle "$k6"
 
-  echo
+  echo "
+
+	j5$srl"
+  siphuncle "$j5"
+
+  echo "
+"
 }
 
+# initialize
+
 camerae
+
 
