@@ -90,51 +90,53 @@ local j3k56x4="$v$o $l$l $t$y $x$u $l$l $l$l $l$l $u$x $y$t $l$l $o$v $q$q "
 local k1j56y7="$l$l $u$x $y$t $l$l $o$v $q$q $v$o $l$l $t$y $x$u $l$l $l$l "
 local k2j56y7="$y$r $l$l $l$l $q$z $v$v $z$q $t$o $l$l $r$y $w$u $l$l $l$l "
 
-# metadata
-
-local srl="-beadgcf-sv`date +'%s%N'`"
-
 # headstock
 
 pegbox_Bj () {
-  echo $1 | awk '{print "\t"$11,$12,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10}'
+  echo -n $1 | awk '{print "\t"$11,$12,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10}'
 }
 
 pegbox_Fn () {
-  echo $1 | awk '{print "\t"$6,$7,$8,$9,$10,$11,$12,$1,$2,$3,$4,$5}'
+  echo -n $1 | awk '{print "\t"$6,$7,$8,$9,$10,$11,$12,$1,$2,$3,$4,$5}'
 }
 
 pegbox_Cn () {
-  echo $1 | awk '{print "\t"$0}'
+  echo -n $1 | awk '{print "\t"$0}'
 }
 
 pegbox_Gn () {
-  echo $1 | awk '{print "\t"$8,$9,$10,$11,$12,$1,$2,$3,$4,$5,$6,$7}'
+  echo -n $1 | awk '{print "\t"$8,$9,$10,$11,$12,$1,$2,$3,$4,$5,$6,$7}'
 }
 
 pegbox_Dn () {
-  echo $1 | awk '{print "\t"$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$1,$2}'
+  echo -n $1 | awk '{print "\t"$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$1,$2}'
 }
 
 pegbox_An () {
-  echo $1 | awk '{print "\t"$10,$11,$12,$1,$2,$3,$4,$5,$6,$7,$8,$9}'
+  echo -n $1 | awk '{print "\t"$10,$11,$12,$1,$2,$3,$4,$5,$6,$7,$8,$9}'
 }
 
 pegbox_En () {
-  echo $1 | awk '{print "\t"$5,$6,$7,$8,$9,$10,$11,$12,$1,$2,$3,$4}'
+  echo -n $1 | awk '{print "\t"$5,$6,$7,$8,$9,$10,$11,$12,$1,$2,$3,$4}'
 }
 
 pegbox_Bn () {
-  echo $1 | awk '{print "\t"$12,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11}'
+  echo -n $1 | awk '{print "\t"$12,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11}'
 }
 
 pegbox_Fk () {
-  echo $1 | awk '{print "\t"$7,$8,$9,$10,$11,$12,$1,$2,$3,$4,$5,$6}'
+  echo -n $1 | awk '{print "\t"$7,$8,$9,$10,$11,$12,$1,$2,$3,$4,$5,$6}'
+}
+
+# contingent
+
+erroreport () {
+  printf "\n\n\t%s\n" "Error: null string argument '$1'" >&2
 }
 
 # fingerboard
 
-siphuncle () {
+BEADGCF () {
   if [ -n "$1" ]
     then
     pegbox_Fn "$1"
@@ -145,28 +147,74 @@ siphuncle () {
     pegbox_En "$1"
     pegbox_Bn "$1"
   else
-    echo "
-	Error: argument length is zero" >&2
+    erroreport "$1"
+  fi
+}
+
+CGDAE () {
+  if [ -n "$1" ]
+    then
+    pegbox_En "$1"
+    pegbox_An "$1"
+    pegbox_Dn "$1"
+    pegbox_Gn "$1"
+    pegbox_Cn "$1"
+  else
+    erroreport "$1"
+  fi
+}
+
+EADGBE () {
+  if [ -n "$1" ]
+    then
+    pegbox_En "$1"
+    pegbox_Bn "$1"
+    pegbox_Gn "$1"
+    pegbox_Dn "$1"
+    pegbox_An "$1"
+    pegbox_En "$1"
+  else
+    erroreport "$1"
+  fi
+}
+
+FkBjDn () {
+  if [ -n "$1" ]
+    then
+    c=0
+    while [ $c -lt 2 ]
+    do
+      pegbox_Dn "$1"
+      pegbox_Bj "$1"
+      pegbox_Fk "$1"
+      c=`expr $c + 1`
+    done
+  else
+    erroreport "$1"
   fi
 }
 
 # layout
 
-  echo "
+  siphuncle () {
+    local serial=`date +'%s%N'`
+    local tuning='eadgbe'
+    local symset='sv'
 
-	k6$srl"
-  siphuncle "$k6"
+    printf "\n\n\t%s\n" "k5-$tuning-$symset$serial"
+    EADGBE "$k5"
 
-  echo "
+    printf "\n\n\t%s\n" "j6-$tuning-$symset$serial"
+    EADGBE "$j6"
 
-	j5$srl"
-  siphuncle "$j5"
+    printf "\n\n"
+  }
 
-  echo "
-"
+  siphuncle
+
 }
 
-# initialize
+# actuate
 
 camerae
 
