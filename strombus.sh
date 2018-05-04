@@ -90,28 +90,36 @@ declare -A conch
  conch["k1j56y7"]="____ AuUr NpSn ____ TiHg FeFe HgTi ____ SnNp UrAu ____ ____ "
  conch["k2j56y7"]="NpCu ____ ____ FePu HgHg PuFe SnTi ____ CuNp PbAu ____ ____ "
 
-siphuncle () {
-  if [[ -n $1 ]]; then
-    echo "${1:25:25}"
-    echo "${1:0 :25}"
-    echo "${1:35:25}"
-    echo "${1:10:25}"
-    echo "${1:45:15}${1:0 :10}"
-    echo "${1:20:25}"
-    echo "${1:55:5 }${1:0 :20}"
-  else
-    return
-  fi
-}
+  fingerboard () {
+    if [[ -n "$1" ]]; then
+      echo -e "\t${1:25:30}"            # Fn
+      echo -e "\t${1:0 :30}"            # Cn
+      echo -e "\t${1:35:25}${1:0 :5 }"  # Gn
+      echo -e "\t${1:10:30}"            # Dn
+      echo -e "\t${1:45:15}${1:0 :15}"  # An
+      echo -e "\t${1:20:30}"            # En
+      echo -e "\t${1:55:5 }${1:0 :25}"  # Bn
+    else
+      printf "\n\t%s\n" "error: null string argument" >&2
+    fi
+  }
 
-  echo -e "\nj56"
-  siphuncle "${conch['j56']}"
+  siphuncle () {
+    local vulcan='j236' cronos='k125' tuning='beadgcf' serial=`date +'%s'`
 
-  echo -e "\nk56"
-  siphuncle "${conch['k56']}"
+    echo -e "\n\n\t$vulcan-$tuning-sv$serial"
+    fingerboard "${conch[$vulcan]}"
 
-  echo
+    echo -e "\n\n\t$cronos-$tuning-sv$serial"
+    fingerboard "${conch[$cronos]}"
+
+    echo -e "\n"
+  }
+
+  siphuncle
+
 }
 
 operculum
+
 
