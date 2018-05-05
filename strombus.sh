@@ -91,10 +91,9 @@ operculum () {
  conch["k2j56y7"]="NpCu ____ ____ FePu HgHg PuFe SnTi ____ CuNp PbAu ____ ____ "
 
 cartographer () {
-
   cat << _EOF_
 
-    useage: bash strombus.sh j236 k125
+    usage: bash strombus.sh j236 k125
 
 	j136y7	j167y2	j17	j17y2	j2	j23	j236
 	j23k6	j246y3	j26	j26y3	j26y34	j2k56	j2k56x4
@@ -119,15 +118,115 @@ _EOF_
     cartographer
   fi
 
-  fingerboard () {
+  pegbox_Bj () {
+    echo -e "\t${1:50:10}${1:0 :20}"
+  }
+
+  pegbox_Fn () {
+    echo -e "\t${1:25:30}"
+  }
+
+  pegbox_Cn () {
+    echo -e "\t${1:0 :30}"
+  }
+
+  pegbox_Gn () {
+    echo -e "\t${1:35:25}${1:0 :5 }"
+  }
+
+  pegbox_Dn () {
+    echo -e "\t${1:10:30}"
+  }
+
+  pegbox_An () {
+    echo -e "\t${1:45:15}${1:0 :15}"
+  }
+
+  pegbox_En () {
+    echo -e "\t${1:20:30}"
+  }
+
+  pegbox_Bn () {
+    echo -e "\t${1:55:5 }${1:0 :25}"
+  }
+
+  pegbox_Fk () {
+    echo -e "\t${1:30:30}"
+  }
+
+  BEADGCF () {
     if [[ -n "$1" ]]; then
-      echo -e "\t${1:25:30}"            # Fn
-      echo -e "\t${1:0 :30}"            # Cn
-      echo -e "\t${1:35:25}${1:0 :5 }"  # Gn
-      echo -e "\t${1:10:30}"            # Dn
-      echo -e "\t${1:45:15}${1:0 :15}"  # An
-      echo -e "\t${1:20:30}"            # En
-      echo -e "\t${1:55:5 }${1:0 :25}"  # Bn
+      pegbox_Fn "$1"
+      pegbox_Cn "$1"
+      pegbox_Gn "$1"
+      pegbox_Dn "$1"
+      pegbox_An "$1"
+      pegbox_En "$1"
+      pegbox_Bn "$1"
+    else
+      return 1
+    fi
+  }
+
+  CGDAE () {
+    if [[ -n "$1" ]]; then
+      pegbox_En "$1"
+      pegbox_An "$1"
+      pegbox_Dn "$1"
+      pegbox_Gn "$1"
+      pegbox_Cn "$1"
+    else
+      return 1
+    fi
+  }
+
+  DADGAD () {
+    if [[ -n "$1" ]]; then
+      pegbox_Dn "$1"
+      pegbox_An "$1"
+      pegbox_Gn "$1"
+      pegbox_Dn "$1"
+      pegbox_An "$1"
+      pegbox_Dn "$1"
+    else
+      return 1
+    fi
+  }
+
+  DGDGBD () {
+    if [[ -n "$1" ]]; then
+      pegbox_Dn "$1"
+      pegbox_Bn "$1"
+      pegbox_Gn "$1"
+      pegbox_Dn "$1"
+      pegbox_Gn "$1"
+      pegbox_Dn "$1"
+    else
+      return 1
+    fi
+  }
+
+  EADGBE () {
+    if [[ -n "$1" ]]; then
+      pegbox_En "$1"
+      pegbox_Bn "$1"
+      pegbox_Gn "$1"
+      pegbox_Dn "$1"
+      pegbox_An "$1"
+      pegbox_En "$1"
+   else
+      return 1
+    fi
+  }
+
+  FkBjDn () {
+    if [[ -n "$1" ]]; then
+      pegbox_Dn "$1"
+      pegbox_Bj "$1"
+      pegbox_Fk "$1"
+      pegbox_Dn "$1"
+      pegbox_Bj "$1"
+      pegbox_Fk "$1"
     else
       return 1
     fi
@@ -135,9 +234,19 @@ _EOF_
 
   local tuning='beadgcf' serial=`date +'%s'`
 
+  case $tuning in
+    'beadgcf') fingerboard=BEADGCF ;;
+      'cgdae') fingerboard=CGDAE   ;;
+     'dadgad') fingerboard=DADGAD  ;;
+     'dgdgbd') fingerboard=DGDGBD  ;;
+     'eadgbe') fingerboard=EADGBE  ;;
+     'fkbjdn') fingerboard=FkBjDn  ;;
+    *) tuning='eadgbe' fingerboard=EADGBE
+  esac
+
     camarae () {
       echo -e "\n\n\t$1-$tuning-sv$serial"
-      fingerboard "${conch[$1]}"
+      $fingerboard "${conch[$1]}"
     }
 
     local septa=0
