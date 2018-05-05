@@ -111,12 +111,7 @@ cartographer () {
 
 _EOF_
 
-  exit 0
 }
-
-  if [[ $# -eq 0 ]]; then
-    cartographer
-  fi
 
   pegbox_Bj () {
     echo -e "\t${1:50:10}${1:0 :20}"
@@ -242,6 +237,7 @@ _EOF_
      'eadgbe') fingerboard=EADGBE  ;;
      'fkbjdn') fingerboard=FkBjDn  ;;
     *) tuning='eadgbe' fingerboard=EADGBE
+    ;;
   esac
 
     camarae () {
