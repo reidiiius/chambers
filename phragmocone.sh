@@ -47,7 +47,6 @@ camerae () {
    local n345="$l$l $z$q $l$l $l$l $r$y $w$u $l$l $u$w $y$r $l$l $o$t $q$z "
    local n5y2="$v$p $l$l $l$l $p$v $r$q $l$l $l$l $u$y $y$u $l$l $o$w $q$r "
    local n6x2="$q$r $v$p $l$l $l$l $p$v $r$q $w$o $l$l $u$y $y$u $l$l $l$l "
-  local j17k2="$l$l $l$l $l$l $p$q $r$o $w$s $l$l $u$u $l$l $s$w $o$r $q$p "
   local j17y2="$v$s $l$l $l$l $l$l $r$w $w$r $l$l $u$t $l$l $s$v $o$q $q$o "
   local j23k6="$v$v $z$q $l$l $x$s $l$l $w$u $l$l $u$w $l$l $l$l $o$t $q$z "
   local j25y6="$o$r $q$p $l$l $l$l $t$v $p$q $r$o $w$s $l$l $l$l $l$l $s$w "
@@ -60,6 +59,7 @@ camerae () {
   local k17j5="$o$r $q$p $v$t $l$l $t$v $p$q $r$o $l$l $l$l $u$u $l$l $l$l "
   local k25x1="$l$l $l$l $o$t $q$z $v$v $z$q $l$l $l$l $r$y $w$u $l$l $u$w "
   local k26x5="$v$t $l$l $l$l $p$q $r$o $w$s $l$l $l$l $l$l $s$w $o$r $q$p "
+  local k2j17="$l$l $l$l $l$l $p$q $r$o $w$s $l$l $u$u $l$l $s$w $o$r $q$p "
   local k2j56="$y$r $l$l $l$l $q$z $v$v $z$q $t$o $l$l $r$y $l$l $l$l $u$w "
   local k34x2="$w$r $l$l $l$l $l$l $s$v $o$q $q$o $v$s $l$l $t$u $l$l $r$w "
   local k56x4="$v$u $l$l $t$w $l$l $r$x $l$l $l$l $u$v $y$q $l$l $o$s $q$y "
@@ -201,11 +201,11 @@ FkBjDn () {
     local tuning='eadgbe'
     local symset='sv'
 
-    printf "\n\n\t%s\n" "k5-$tuning-$symset$serial"
-    EADGBE "$k5"
+    printf "\n\n\t%s\n" "k2j17-$tuning-$symset$serial"
+    EADGBE "$k2j17"
 
-    printf "\n\n\t%s\n" "j6-$tuning-$symset$serial"
-    EADGBE "$j6"
+    printf "\n\n\t%s\n" "j2k34-$tuning-$symset$serial"
+    EADGBE "$j2k34"
 
     printf "\n\n"
   }

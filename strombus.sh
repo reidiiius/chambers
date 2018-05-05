@@ -4,7 +4,7 @@
 
 operculum () {
 
-declare -A conch
+  declare -A conch
 
       conch["j2"]="HgHg PuFe ____ ____ CuNp PbAu ____ AuPb ____ AgUr ____ FePu "
       conch["j3"]="HgSn ____ SnHg UrFe ____ PbAg ____ AuAu ____ AgPb ____ FeUr "
@@ -47,7 +47,6 @@ declare -A conch
     conch["n345"]="____ PuFe ____ ____ CuNp PbAu ____ AuPb NpCu ____ TiSn FePu "
     conch["n5y2"]="HgMn ____ ____ MnHg CuFe ____ ____ AuNp NpAu ____ TiPb FeCu "
     conch["n6x2"]="FeCu HgMn ____ ____ MnHg CuFe PbTi ____ AuNp NpAu ____ ____ "
-   conch["j17k2"]="____ ____ ____ MnFe CuTi PbAg ____ AuAu ____ AgPb TiCu FeMn "
    conch["j17y2"]="HgAg ____ ____ ____ CuPb PbCu ____ AuSn ____ AgHg TiFe FeTi "
    conch["j23k6"]="HgHg PuFe ____ UrAg ____ PbAu ____ AuPb ____ ____ TiSn FePu "
    conch["j25y6"]="TiCu FeMn ____ ____ SnHg MnFe CuTi PbAg ____ ____ ____ AgPb "
@@ -60,6 +59,7 @@ declare -A conch
    conch["k17j5"]="TiCu FeMn HgSn ____ SnHg MnFe CuTi ____ ____ AuAu ____ ____ "
    conch["k25x1"]="____ ____ TiSn FePu HgHg PuFe ____ ____ CuNp PbAu ____ AuPb "
    conch["k26x5"]="HgSn ____ ____ MnFe CuTi PbAg ____ ____ ____ AgPb TiCu FeMn "
+   conch["k2j17"]="____ ____ ____ MnFe CuTi PbAg ____ AuAu ____ AgPb TiCu FeMn "
    conch["k2j56"]="NpCu ____ ____ FePu HgHg PuFe SnTi ____ CuNp ____ ____ AuPb "
    conch["k34x2"]="PbCu ____ ____ ____ AgHg TiFe FeTi HgAg ____ SnAu ____ CuPb "
    conch["k56x4"]="HgAu ____ SnPb ____ CuUr ____ ____ AuHg NpFe ____ TiAg FeNp "
@@ -90,6 +90,35 @@ declare -A conch
  conch["k1j56y7"]="____ AuUr NpSn ____ TiHg FeFe HgTi ____ SnNp UrAu ____ ____ "
  conch["k2j56y7"]="NpCu ____ ____ FePu HgHg PuFe SnTi ____ CuNp PbAu ____ ____ "
 
+cartographer () {
+
+  cat << _EOF_
+
+    useage: bash strombus.sh j236 k125
+
+	j136y7	j167y2	j17	j17y2	j2	j23	j236
+	j23k6	j246y3	j26	j26y3	j26y34	j2k56	j2k56x4
+	j2k6	j2k6x5	j2k6y3	j2y3	j3	j34k6	j36
+	j3k56x4	j3k5x4	j3k6	j6	k157x6	k1j6	k256
+	k26	k26x5	k2j17	k2j6	k56	k56x4	k6
+	k6x5	n0	n167x4	n26y5	n345	n45y2	n5y2
+
+	k135x4	k345x2	k34	k34x2	k2	k12	k125
+	k12j5	k257x1	k25	k25x1	k25x17	k2j56	k2j56y7
+	k2j5	k2j5y6	k2j5x1	k2x1	k1	k17j5	k15
+	k1j56y7	k1j6y7	k1j5	k5	j346y5	j3k5	j256
+	j25	j25y6	j2k34	j2k5	j56	j56y7	j5
+	j5y6	n0	n345y7	n25x6	n167	n67x2	n6x2
+
+_EOF_
+
+  exit 0
+}
+
+  if [[ $# -eq 0 ]]; then
+    cartographer
+  fi
+
   fingerboard () {
     if [[ -n "$1" ]]; then
       echo -e "\t${1:25:30}"            # Fn
@@ -100,26 +129,43 @@ declare -A conch
       echo -e "\t${1:20:30}"            # En
       echo -e "\t${1:55:5 }${1:0 :25}"  # Bn
     else
-      printf "\n\t%s\n" "error: null string argument" >&2
+      return 1
     fi
   }
 
-  siphuncle () {
-    local vulcan='j236' cronos='k125' tuning='beadgcf' serial=`date +'%s'`
+  local tuning='beadgcf' serial=`date +'%s'`
 
-    echo -e "\n\n\t$vulcan-$tuning-sv$serial"
-    fingerboard "${conch[$vulcan]}"
+    camarae () {
+      echo -e "\n\n\t$1-$tuning-sv$serial"
+      fingerboard "${conch[$1]}"
+    }
 
-    echo -e "\n\n\t$cronos-$tuning-sv$serial"
-    fingerboard "${conch[$cronos]}"
+    local septa=0
 
+    siphuncle () {
+      for clave in ${!conch[@]}; do
+        if [[ $clave = $1 ]]; then
+          camarae $1
+          septa=$((septa + 1))
+          break
+        fi
+      done
+    }
+
+    for args
+    do
+      siphuncle $1
+      shift
+    done
+
+  if [[ $septa -gt 0 ]]; then
     echo -e "\n"
-  }
-
-  siphuncle
+  else
+    cartographer
+  fi
 
 }
 
-operculum
+operculum $@
 
 
